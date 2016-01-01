@@ -1,0 +1,6 @@
+#directories to exclude
+test/
+
+#misc
+*.pyc
+*.log
