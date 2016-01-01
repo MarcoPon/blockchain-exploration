@@ -1,6 +1,6 @@
 #! python3
 
-DEBUG = True
+DEBUG = False
 
 import tkinter
 import tkinter.messagebox as tkMessageBox
@@ -34,6 +34,7 @@ if DEBUG:
     query = "blockchain:/tx/8f467a713d04c1bb354dee692ee0879b02b68199d7a3ca534ccf012aeb33e3ca"
 else:
     query = sys.argv[1]
+	
 
 
 confname = os.path.join(os.path.dirname(sys.argv[0]), "bc-handler.conf")
@@ -57,7 +58,7 @@ if query[:11] == "blockchain:":
     else:
         pass
         
-if DEBUG:
+if True:
     tkMessageBox.showinfo("Python", "Blockchain URI handler\n\n" +
                       "chain: %s\n" % (blockhash2nick(bc_chain)) +
                       "type: %s\n" % (bc_type) +
