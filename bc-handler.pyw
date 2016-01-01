@@ -77,6 +77,6 @@ for explorerid in conf["open"]:
             elif bc_type == "tx":
                 url = spec["tx"] % (bc_hash)
             elif bc_type == "address":
-                url = spec["address"] % (bc_hash)
+                url = spec["addr"] % (bc_hash)
     if url:
         webbrowser.open(url)
