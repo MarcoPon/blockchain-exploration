@@ -69,14 +69,15 @@ for explorerid in conf["open"]:
     url = ""
     for spec in conf["block-explorers"]:
         if spec["name"] == explorerid:
-            if bc_type == "block":
-                if isblockheight(bc_hash):
-                    url = spec["height"] % (bc_hash)
-                else:
-                    url = spec["block"] % (bc_hash)
-            elif bc_type == "tx":
-                url = spec["tx"] % (bc_hash)
-            elif bc_type == "address":
-                url = spec["addr"] % (bc_hash)
+            if bc_type in spec:
+                if bc_type == "block":
+                    if isblockheight(bc_hash):
+                        url = spec["height"] % (bc_hash)
+                    else:
+                        url = spec["block"] % (bc_hash)
+                elif bc_type == "tx":
+                    url = spec["tx"] % (bc_hash)
+                elif bc_type == "address":
+                    url = spec["addr"] % (bc_hash)
     if url:
         webbrowser.open(url)
