@@ -30,12 +30,7 @@ def blockhash2nick(hash):
 root = tkinter.Tk()
 root.withdraw()
 
-if DEBUG:
-    query = "blockchain:/tx/8f467a713d04c1bb354dee692ee0879b02b68199d7a3ca534ccf012aeb33e3ca"
-else:
-    query = sys.argv[1]
-	
-
+query = sys.argv[1]
 
 confname = os.path.join(os.path.dirname(sys.argv[0]), "bc-handler.conf")
 with open(confname) as fconf:
@@ -44,9 +39,9 @@ with open(confname) as fconf:
 
 bc_chain = bc_type = bc_hash = ""
 
+#just a quick & dirty parse...
 if query[:11] == "blockchain:":
-    query = query[11:] # from the second slash, if any
-
+    query = query[11:] # from the second slash, if any - skip authority part
     params = query.split("/")
     if len(params) == 3:
         bc_type = params[1]
@@ -58,26 +53,22 @@ if query[:11] == "blockchain:":
     else:
         pass
         
-if True:
+if DEBUG:
     tkMessageBox.showinfo("Python", "Blockchain URI handler\n\n" +
                       "chain: %s\n" % (blockhash2nick(bc_chain)) +
                       "type: %s\n" % (bc_type) +
                       "hash: %s" % (bc_hash) +
                       "\n\n\nRaw: [%s]" % (query))
 
+if bc_type == "block":
+    if isblockheight(bc_hash):
+        bc_type = "height"
+
 for explorerid in conf["open"]:
     url = ""
     for spec in conf["block-explorers"]:
         if spec["name"] == explorerid:
             if bc_type in spec:
-                if bc_type == "block":
-                    if isblockheight(bc_hash):
-                        url = spec["height"] % (bc_hash)
-                    else:
-                        url = spec["block"] % (bc_hash)
-                elif bc_type == "tx":
-                    url = spec["tx"] % (bc_hash)
-                elif bc_type == "address":
-                    url = spec["addr"] % (bc_hash)
+                    url = spec[bc_type] % (bc_hash)
     if url:
         webbrowser.open(url)
