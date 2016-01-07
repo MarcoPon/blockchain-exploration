@@ -1,6 +1,6 @@
 #! python3
 
-DEBUG = False
+DEBUG = True
 
 import tkinter
 import tkinter.messagebox as tkMessageBox
@@ -8,6 +8,7 @@ import os
 import sys
 import webbrowser
 import json
+from urllib.parse import urlparse
 
 def isblockheight(hash):
     # just a super simple euristic
@@ -39,19 +40,10 @@ with open(confname) as fconf:
 
 bc_chain = bc_type = bc_hash = ""
 
-#just a quick & dirty parse...
-if query[:11] == "blockchain:":
-    query = query[11:] # from the second slash, if any - skip authority part
-    params = query.split("/")
-    if len(params) == 3:
-        bc_type = params[1]
-        bc_hash = params[2]
-    elif len(params) == 5:
-        bc_chain = params[2]
-        bc_type = params[3]
-        bc_hash = params[4]
-    else:
-        pass
+pr = urlparse(query)
+if pr.scheme == "blockchain":
+    bc_chain = pr.netloc
+    bc_type, bc_hash = pr.path.split("/")[-2:]
         
 if DEBUG:
     tkMessageBox.showinfo("Python", "Blockchain URI handler\n\n" +
