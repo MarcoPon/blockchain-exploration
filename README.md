@@ -1,4 +1,4 @@
-This is just a small test / demo for the proposed [Blockchain URI](https://github.com/MarcoPon/bips/blob/master/bip-MarcoPon-BlockchainURI.mediawiki).
+This is just a small test / demo for [BIP 122: URI scheme for Blockchain references / exploration](https://github.com/bitcoin/bips/blob/master/bip-0122.mediawiki).
 
 [YouTube - Demo Blockchain: URI handler](https://www.youtube.com/watch?v=87floGLZU2I)
 
