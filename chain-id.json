@@ -1,0 +1,41 @@
+{
+"block-explorers" : [
+	{	"coin"  : "Bitcoin",
+		"iso"   : "BTC",
+		"url"   : "",
+		"chains": {
+			"main"   : "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+			"test"   : "000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943",
+			"regtest": "0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"
+		}
+	},
+	{	"coin"  : "Dogecoin",
+		"iso"   : "DGC",
+		"url"   : "",
+		"chains": {
+			"main":"1a91e3dace36e2be3bf030a65679fe821aa1d6ef92e7c9902eb318182c355691"
+		}
+	},
+	{	"coin"  : "Emercoin",
+		"iso"   : "EMC",
+		"url"   : "http://emercoin.com/",
+		"chains": {
+			"main":"00000000bcccd459d036a588d1008fce8da3754b205736f32ddfd35350e84c2d"
+		}
+	},
+	{	"coin"  : "Feathercoin",
+		"iso"   : "FTC",
+		"url"   : "",
+		"chains": {
+			"main":"fdbe99b90c90bae7505796461471d89ae8388ab953997aa06a355bbda8d915cb"
+		}
+	},
+	{	"coin"  : "Litecoin",
+		"iso"   : "LTC",
+		"url"   : "",
+		"chains": {
+			"main":"12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"
+		}
+	}
+]
+}
