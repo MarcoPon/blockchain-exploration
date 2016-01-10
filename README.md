@@ -1,6 +1,6 @@
 This is just a small test / demo for [BIP 122: URI scheme for Blockchain references / exploration](https://github.com/bitcoin/bips/blob/master/bip-0122.mediawiki).
 
-[YouTube - Demo Blockchain: URI handler](https://www.youtube.com/watch?v=87floGLZU2I)
+[YouTube - Demo Blockchain: URI handler](https://www.youtube.com/watch?v=7wwVnQn7rj8)
 
 It contains an HTML test page with some blockchain references and a sample Python handler **bc-handler.pyw** that act as a block explorer proxy of sort. The **bc-handler.conf** is a JSON file with templates for a number of block explorers (other can easily be added). Note on the final "open" entry that more than one explorer can be opened at the same time.
 
