@@ -44,6 +44,7 @@ pr = urlparse(query)
 if pr.scheme == "blockchain":
     bc_chain = pr.netloc
     bc_type, bc_hash = pr.path.split("/")[-2:]
+    bc_type = bc_type.lower()
         
 if DEBUG:
     tkMessageBox.showinfo("Python", "Blockchain URI handler\n\n" +
