@@ -6,7 +6,8 @@
 		"chains": {
 			"main"   : "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
 			"test"   : "000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943",
-			"regtest": "0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"
+			"regtest": "0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206",
+			"segnet" : "0d5b9c518ddf053fcac71730830df4526a9949c08f34acf6a1d30464d22f02aa"
 		}
 	},
 	{	"coin"  : "Dogecoin",
@@ -21,6 +22,13 @@
 		"url"   : "http://emercoin.com/",
 		"chains": {
 			"main":"00000000bcccd459d036a588d1008fce8da3754b205736f32ddfd35350e84c2d"
+		}
+	},
+	{	"coin"  : "Ethereum",
+		"iso"   : "ETH",
+		"url"   : "https://www.ethereum.org/",
+		"chains": {
+			"main":"d4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3"
 		}
 	},
 	{	"coin"  : "Feathercoin",
